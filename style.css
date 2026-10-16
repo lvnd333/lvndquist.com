@@ -10,13 +10,12 @@
 }
 
 html, body {
-  height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   overscroll-behavior: none;
   background: #000;
 }
 
-body {
+.top {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,6 +23,19 @@ body {
   height: 100dvh;
   background: url(slmbg.jpg) center / cover no-repeat,
     url(slmbg-low.jpg) center / cover no-repeat;
+}
+
+.video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+}
+
+iframe {
+  width: min(94vw, 1200px);
+  aspect-ratio: 16 / 9;
+  border: 0;
 }
 
 img {
@@ -51,4 +63,10 @@ nav svg {
   width: 24px;
   height: 24px;
   fill: #fff;
+}
+
+@media (max-width: 700px) {
+  .video {
+    display: none;
+  }
 }
