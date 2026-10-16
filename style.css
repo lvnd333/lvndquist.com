@@ -9,9 +9,15 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-html, body {
-  overflow-x: hidden;
-  overscroll-behavior: none;
+html {
+  overflow-x: clip;
+  background: #000;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  overscroll-behavior-y: auto;
   background: #000;
 }
 
