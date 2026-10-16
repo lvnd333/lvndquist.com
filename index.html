@@ -50,7 +50,17 @@
     </nav>
   </section>
   <section class="video">
-    <iframe src="https://www.youtube-nocookie.com/embed/LKI-068yb24?si=x6sNqdbovePSw2mE" title="lvndquist" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe id="video" src="https://www.youtube-nocookie.com/embed/LKI-068yb24?si=x6sNqdbovePSw2mE&enablejsapi=1&cc_load_policy=0" title="lvndquist" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </section>
+  <script>
+    function onYouTubeIframeAPIReady() {
+      new YT.Player('video', {
+        events: {
+          onReady: function (e) { e.target.unloadModule('captions') },
+          onStateChange: function (e) { e.target.unloadModule('captions') }
+        }
+      })
+    }
+  </script>
 </body>
 </html>
